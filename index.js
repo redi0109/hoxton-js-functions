@@ -33,9 +33,15 @@ isEven(Number(prompt(`Enter a number to see if it is even or not`)));
   // Input: age (number)
   // Action: Check if the age is 18 or over
   // Output: The result (boolean)
-  function isAnAdult() {
-    // write your code here
+  function isAnAdult(age) {
+    if (age >= 18) {
+      console.log("You can enter!!!");
+    }
+    else{
+        console.log("You can't enter yet!");
+    }
   }
+    isAnAdult(Number(prompt("Enter your age")));
   
   // Input: age (number)
   // Action: Check how many years are left until adulthood (18)
