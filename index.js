@@ -28,17 +28,17 @@ isEven(Number(prompt(`Enter a number to see if it is even or not`)));
   function greet(name) {
     console.log(`Hello, ${name}!`);
   }
-  greet(prompt("Enter your name"));
+  greet(String(prompt("Enter your name")));
   
   // Input: age (number)
   // Action: Check if the age is 18 or over
   // Output: The result (boolean)
   function isAnAdult(age) {
     if (age >= 18) {
-      console.log("You can enter!!!");
+      console.log(true);
     }
     else{
-        console.log("You can't enter yet!");
+        console.log(false);
     }
   }
     isAnAdult(Number(prompt("Enter your age")));
@@ -46,9 +46,15 @@ isEven(Number(prompt(`Enter a number to see if it is even or not`)));
   // Input: age (number)
   // Action: Check how many years are left until adulthood (18)
   // Output: The result (number)
-  function yearsToAdulthood() {
-    // write your code here
+  function yearsToAdulthood(age) {
+    if(age < 18) {
+      console.log("You have " + (18 - age) + " years left until adulthood");
+    }
+    else(
+        console.log(`You are already an adult`)
+    )
   }
+    yearsToAdulthood(Number(prompt("Enter your age")));
   
   // Input: person ({ age: number, name: string })
   // Action:
@@ -56,7 +62,15 @@ isEven(Number(prompt(`Enter a number to see if it is even or not`)));
   //   - if they are, greet them
   //   - if they are not, tell them to come back in X years (when they are)
   // Output: The result (string)
-  function admit() {
+  function admit(age, name) {
+    if (age >= 18) {
+      console.log(`Hello, ${name}!`);
+    }else if(age < 18){
+      console.log(`Hello, ${name}! You have ${18 - age} years left until adulthood`);
+    }
+    admit(Number(prompt("Enter your age")), String(prompt("Enter your name")));
+    
+    
     // write your code here
     // use greet, isAnAdult and yearsToAdulthood to help you!
   }
